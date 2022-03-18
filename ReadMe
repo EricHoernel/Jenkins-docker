@@ -18,6 +18,8 @@ sudo apt-get purge git
 sudo apt-get autoremove
 sudo apt-get install git
 
+"trop cool mon commentaire"
+
 -- modification et push
 git  commit -am "mon commentaire"
 git push
