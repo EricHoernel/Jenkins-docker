@@ -6,11 +6,11 @@ node {
     }
 
     stage('Build de mon application') {
-        app = docker.build("phyxsie/montp1")
+        app = docker.build("phyxsie/montp1:tagname")
     }
 
     stage('Test de mon application') {
-        docker.image('phyxsie/montp1').withRun('--rm -p 80:80 --name devops') { c ->
+        docker.image('phyxsie/montp1:tagname').withRun('--rm -p 80:80 --name devops') { c ->
         sh 'docker ps'
         sh 'docker exec devops curl localhost:80'
         sh 'echo "Tests passed"'
